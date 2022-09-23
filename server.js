@@ -5,8 +5,10 @@ import cors from 'cors'
 import formData from 'express-form-data'
 
 
-import './config/database.js'
+import { router as authRouter } from './routes/auth.js'
 
+
+import './config/database.js'
 
 const app = express()
 
@@ -15,6 +17,8 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(formData.parse())
 
+
+app.use('/api/auth', authRouter)
 
 
 app.use(function (req, res, next) {
