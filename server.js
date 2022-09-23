@@ -3,7 +3,7 @@ import express from 'express'
 import logger from 'morgan'
 import cors from 'cors'
 import formData from 'express-form-data'
-
+import cookieParser from 'cookie-parser'
 
 import { router as authRouter } from './routes/auth.js'
 import { router as usersRouter } from './routes/users.js'
@@ -15,6 +15,7 @@ const app = express()
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
+app.use(cookieParser())
 app.use(formData.parse())
 
 
