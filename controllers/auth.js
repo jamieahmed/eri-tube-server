@@ -14,7 +14,7 @@ const signup = async (req, res, next) => {
         await newUser.save();
         res.status(200).send("User has been created Successfully!");
 
-    } catch (error) {
+    } catch (err) {
         next(err);
     }
 }
@@ -39,7 +39,7 @@ const signin = async (req, res, next) => {
             .status(200)
             .json(others);
 
-    } catch (error) {
+    } catch (err) {
         next(err);
     }
 }
@@ -47,8 +47,8 @@ const signin = async (req, res, next) => {
 const googleAuth = async (req, res, next) => {
     try {
 
-    } catch (error) {
-
+    } catch (err) {
+        next(err);
     }
 }
 
