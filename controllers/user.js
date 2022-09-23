@@ -1,7 +1,8 @@
 import User from "../models/user.js"
 import { theError } from "../middleware/error.js";
 
-////////////////////// Get a user ///////////////////////////////
+
+/////////// CREATE A USER /////////
 const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
@@ -11,7 +12,8 @@ const getUser = async (req, res, next) => {
     }
 }
 
-////////////////////// Delete a user ///////////////////////////////
+
+/////////// DELETE A USER /////////
 const deleteUser = async (req, res, next) => {
     if (req.params.id === req.user.id) {
         try {
@@ -25,4 +27,56 @@ const deleteUser = async (req, res, next) => {
     }
 }
 
-export { getUser, deleteUser }
+
+//////// UPDATE A USER ///////
+const updateUser = async (req, res, next) => {
+    try {
+        res.json("update user")
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+////////// LIKE //////////////
+const like = async (req, res, next) => {
+    try {
+        res.json("like")
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+/////////// DISLIKE /////////
+const dislike = async (req, res, next) => {
+    try {
+        res.json("dislike")
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+
+////////// SUBSCRIBE //////////////
+const subscribe = async (req, res, next) => {
+    try {
+        res.json("sub")
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+
+/////////// UNSUBSCRIBE /////////
+const unsubscribe = async (req, res, next) => {
+    try {
+        res.json("unsub")
+    } catch (err) {
+        next(err);
+    }
+}
+
+export { getUser, deleteUser, updateUser, like, dislike, subscribe, unsubscribe }
