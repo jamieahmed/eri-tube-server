@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser'
 import { router as authRouter } from './routes/auth.js'
 import { router as usersRouter } from './routes/users.js'
 import { router as videosRouter } from './routes/videos.js'
+import { router as commentsRouter } from './routes/comments.js'
 
 import './config/database.js'
 
@@ -22,7 +23,7 @@ app.use(express.json())
 app.use('/api/auth', authRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/videos', videosRouter)
-
+app.use('/api/comments', commentsRouter)
 
 
 app.use(function (req, res, next) {
