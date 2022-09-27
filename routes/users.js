@@ -12,7 +12,7 @@ router.delete('/:id', checkAuth, authCtrl.deleteUser)    //////////// DELETE A U
 router.put('/:id', checkAuth, authCtrl.updateUser)         /////////// UPDATE A USER ////////////////
 router.put('/like/:id', checkAuth, authCtrl.like)            /////////// LIKE  ////////////////////
 router.put('/dislike/:id', checkAuth, authCtrl.dislike)        //////////// DISLIKE/////////////
-router.put('/subscribe/:id', checkAuth, authCtrl.subscribe)     //////////// SUBSCRIBE////////
-router.put('/unsubscribe/:id', checkAuth, authCtrl.unsubscribe)   /////////// UNSUBSCRIBE ///
+router.put('/sub/:id', checkAuth, authCtrl.subscribe)     //////////// SUBSCRIBE////////
+router.put('/unsub/:id', checkAuth, authCtrl.unsubscribe)   /////////// UNSUBSCRIBE ///
 
 export { router }
