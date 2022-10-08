@@ -5,7 +5,11 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node ./bin/www.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": {
+    "node": "16.15.0"
   },
   "author": "jamie ahmed",
   "license": "ISC",
